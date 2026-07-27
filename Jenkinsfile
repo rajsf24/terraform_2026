@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/rajsf24/terraform_2026.git'
+                git branch: 'master', url: 'https://github.com/rajsf24/terraform_2026.git'
             }
         }
         stage('Terraform init') {
