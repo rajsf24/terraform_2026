@@ -6,7 +6,6 @@ echo "itadmin  ALL=(ALL)   NOPASSWD: ALL" >> /etc/sudoers
 sed 's/PasswordAuthentication no/PasswordAuthentication yes/' -i /etc/ssh/sshd_config
 echo PermitRootLogin yes >> /etc/ssh/sshd_config
 systemctl restart sshd
-
 yum update -y
 yum install ansible* -y
 hostnamectl  set-hostname ansible
@@ -34,4 +33,5 @@ chown -R  itadmin:itadmin  /home/itadmin/punepro
 cd /home/itadmin/punepro; ansible node1 -a "hostnamectl set-hostname node1.example.com"
 cd /home/itadmin/punepro; ansible node2 -a "hostnamectl set-hostname node2.example.com"
 cd /home/itadmin/punepro; ansible node3 -a "hostnamectl set-hostname node3.example.com"
+chown -R  itadmin:itadmin  /home/itadmin/punepro
 
